@@ -73,7 +73,14 @@ Virtualization's flexibility makes it easy to provision whatever is needed quick
 
 ![image](https://user-images.githubusercontent.com/11463852/185369123-860ff1f8-ac71-4e05-b6ff-4e44e432e76c.png)
 
-
+---
+### AWS Reliablity and Compliance
+- ISO 9000
+- FedRAMP
+- NIST
+- GDPR
+- Staples!
+[AWS Compliance](https://aws.amazon.com/compliance/programs/)
 
 
 
