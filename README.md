@@ -9,6 +9,8 @@
 
 ### Chapter 1
 #### Cloud Computing and Virtualization
+[Chapter 1](chapter-1-intro.md)
+
 
 ![image](https://user-images.githubusercontent.com/11463852/185354155-9948885a-11a5-481c-93dc-894043d6e72e.png)
 

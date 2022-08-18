@@ -74,7 +74,7 @@ Virtualization's flexibility makes it easy to provision whatever is needed quick
 ![image](https://user-images.githubusercontent.com/11463852/185369123-860ff1f8-ac71-4e05-b6ff-4e44e432e76c.png)
 
 ---
-### AWS Reliablity and Compliance
+## AWS Reliablity and Compliance
 - ISO 9000
 - FedRAMP
 - NIST
@@ -82,5 +82,56 @@ Virtualization's flexibility makes it easy to provision whatever is needed quick
 - Staples!
 [AWS Compliance](https://aws.amazon.com/compliance/programs/)
 
+---
+## AWS Shared Responsibility
+
+### AWS 
+> Of the cloud
+- Hardware and network maintenance
+- Global infrastructure
+- Managed services
+
+### Customer
+> In the cloud
+- Customer data
+- User applications
+- Access management
+- Operating system, network, access configuration
+- Data encryption
+
+### Service Level Agreements
+- SLA for EC2 is 99.99%
+- Available for all but 4 minutes each month
+- Build applications to be geographically dispersed to be be fault tolerant so that when things break, users barely notice
+
+
+### Tools
+- AWS CLI
+- AWS SDKs
+
+### Support Plans
+#### Basic
+- Free
+- Documentation
+- White papers
+- Support forum
+- Billing and account support
+
+#### Developer
+- $29 / month
+- Access to cloud support associate
+
+#### Business
+- $100+ / month
+- Faster response times
+- Personal guidance
+- Support API 
+
+
+#### Enterprise
+- $15,000 / month
+- Direct access to AWS solutions architects
+- Support concierge
+- Technical account manager
 
 
