@@ -68,6 +68,8 @@ Virtualization's flexibility makes it easy to provision whatever is needed quick
 | | SQS | Event driven messaging queue- reliably delivered |
 | | API Gateway | Create, manage, secure reliable APIs for AWS based applications |
 ----
+## AWS Regional Services
+[Edge Services](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)
 
 
 
