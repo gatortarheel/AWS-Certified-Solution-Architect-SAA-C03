@@ -71,6 +71,9 @@ Virtualization's flexibility makes it easy to provision whatever is needed quick
 ## AWS Regional Services
 [Edge Services](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)
 
+![image](https://user-images.githubusercontent.com/11463852/185369123-860ff1f8-ac71-4e05-b6ff-4e44e432e76c.png)
+
+
 
 
 
