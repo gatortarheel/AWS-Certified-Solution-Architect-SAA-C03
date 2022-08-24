@@ -85,3 +85,38 @@
 - For workloads that can be interrupted
 - You bid and hope you get some compute based on your bid
 
+## Instance Lifecycle
+
+- Terminating an instance destroys all data on the instance.  The exception is when Elastic Block Store is used, which can be set to persist the data.
+
+- A stopped instance with a nonpersisted public IP address will most likely get a different IP address when restarted.  If a predictable IP address is needed, allocate an elastic IP address and associate that with your instance.
+
+- An instance's security group can be changed *while it is running*.
+
+- An instance type can be changed (increase memory or speed, for example) *not while it is running*.  You do need to stop it, then change the type, then restart it.
+
+## Resource Tags
+
+- Establish a consistent naming convention and apply it to tags
+
+> The related security group has the same `key` but uses a different value, allowed them to be searched more easily.
+
+|Key|Value|
+|-----|------|
+|`production-server`|`server1`|
+|`production-server`|`server2`|
+|`production-server`|`security-group1`|
+|`staging-server`|`server1`|
+|`staging-server`|`server2`|
+|`staging-server`|`security-gropu1`|
+|`test-server`|`server1`|
+|`test-server`|`security-group1`|
+
+## Service Limits
+
+- Only 5 VPCs per region
+- Only 5,000 SSH Secure Shell key pairs across account.
+
+# EC2 Storage Volumes
+
+
