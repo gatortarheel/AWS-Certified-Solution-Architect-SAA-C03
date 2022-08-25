@@ -85,3 +85,53 @@
 - For workloads that can be interrupted
 - You bid and hope you get some compute based on your bid
 
+## EC2 Storage Volumes
+
+- You can install multiple Elastic Block Store volumes to your instance - but each volume can only be attached to one instance.
+- AWS SLA guarantees *99.99%* availability
+- If an EBS does fail there are backups in place you *probably will not notice*
+
+> IOPS - Input / Output Operations per Second
+
+### EBS-Provisioned IOPS SSD
+
+- For intense workloads
+- Provides max IOPS/volume of 64,000
+- Max throughput volume of 1,000 MB/s
+- Costs $0.125/GB/month in addition to $0.065/provisioned IOPS
+
+### EBS General-Purpose SSD
+
+- Most regular workloads
+- Provides max IOPS/volume of 16,000 IOPS/volume
+- Cost $0.10/GB/month
+- General purpose 8 GB boot drive for Linux - $9.60/year
+
+### Throughput-Optimized HDD
+
+- Reduced cost with acceptable performance
+- Good for log processing and big data operations
+- IOPS/volume of 500
+- Maximum throughput of 500 MB/sec
+- $0.045/GB/month
+
+#### Cold HDD
+
+- ok for infrequent access
+- IOPS/volume of 250
+- $0.25/GB/month
+
+### EBS Volume Features
+
+- All can be copied with a snapshot
+- Snapshots can be used to generate other volumes
+- Can be encrypted automatically or with AWS KMS keys you provide
+
+## Instance Store Volumes
+
+- Ephemeral
+- Instance store volumes are SSDs that are physically attached so they are connected to your instance via a fast NVMe [Non-Volatile Memory Express] interface
+- Use of instance store generally include in price of instance
+- Work well for deployment models where instances are launched as a part of auto-scaling
+- Function as disposable instances to allow for short term roles
+
