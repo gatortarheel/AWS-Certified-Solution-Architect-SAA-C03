@@ -168,16 +168,18 @@
 - Function as disposable instances to allow for short term roles
 
 ### EBS Bottom Line
+
 - EBS the right choice for data that needs to persist past a reboot
 - EBS the right choice for working with off-the-shelf AMIs [Amazon Machine Image]
 
 ### Instance Store
+
 - Useful for low-latency access to large amounts of data that doesn't need to survive a reboot
 - Can work well when requirements do not include fantastic read/write speeds, but you want to enjoy flexibility and cost savings of S3
 
 ## Accessing EC2 Instances
-- EC2s are identified by a unique IP address
 
+- EC2s are identified by a unique IP address
 
 > The three IP address ranges used by private networks
 
@@ -194,6 +196,7 @@ If your configuration requires multiple network interfaces - to connect to other
 An instance can be assigned a public IP address.  The default public IP address is **ephmeral**.  You can add a permanent elastic IP address for long term deployments.  Elasic IPs are *free* provided they are attached to *running instances.*
 
 `$ curl http://169.254.169.254/latest/meta-data`
+
 - ami-id
 - ami-launch-index
 - ami-manifest path
@@ -214,6 +217,7 @@ An instance can be assigned a public IP address.  The default public IP address 
 - public-keys/
 - reservation-id
 - security-groups
+
 > You will use the 169.254.169.254 IP for the command regardless of privae/public IP address.
 
 ---
@@ -221,6 +225,7 @@ An instance can be assigned a public IP address.  The default public IP address 
 ## EC2 Security
 
 ### Security Groups
+
 - plays the role of firewall
 - default is to deny all incoming traffic and allow outgoing traffic
 - group behavior defined with policy rules that allow or block traffic types
@@ -228,15 +233,39 @@ An instance can be assigned a public IP address.  The default public IP address 
 - web site can be open to the world, but backend servers are blocked for everyone but the members of your team
 
 ### IAM Roles
+
 - access can be assigned with IAM roles
 - when a role is assigned, they will gain access to the resources in the role policies
 - you can assign a role to an EC2 instance so that processes running within it can access external rools, like an RDS instance
 
 ### NAT Devices
+
 - Network Address Translation
 - can provide private instance access *to* the Internet without allowing access to it **from** the Internet.
 
+### Key Pairs
 
-### 
+- Windows AMI - use private key file to retrieve password and connect to instance
+- Linux AMI - private key allows for SSH session
+- save the public key to the EC2 server, save the private key to a local machine
+- you **should** delete the AWS copy in the event the public key is lost or exposed
+
+## EC2 Auto Scaling
+
+- dynamically adds more instances
+- uses a launch configuration or launch template
+
+### launch configurations
+
+- document that contains launch information
+- can be created from scratch
+- you can **not** launch an instance from a launch configuration
+- it can **not** be modified once created
+
+### launch templates
+
+- versioned
+- more versitile than launch configurations
+- can be copy/pasted to other instances
 
 ##
