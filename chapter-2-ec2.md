@@ -268,4 +268,55 @@ An instance can be assigned a public IP address.  The default public IP address 
 - more versitile than launch configurations
 - can be copy/pasted to other instances
 
-##
+## Auto Scaling Groups 
+
+- number of running instances
+- minimum and maximum size of scaling group
+- desired number of instances - capacity or group size - Auto Scaling keeps the number of instances at this level
+
+> Specifying an Application Load Balancer - add the name of the ALB target group and when Auto Scaling creates an instance, it will add it to the ALB application group
+
+## Health Checks
+
+- Auto Scaling checks for healthy instances and replaces if not healthy
+- Traffic will not route to unhealthy instances
+- It's good to have a few recovery actions that work for a variety of circumstances
+- But if termination and restart solves the issue, that's ok also
+
+## Auto Scaling Options
+
+### Manual Scaling
+
+- Changing this is like changing a thermostat.  Manually increase the number of instances, Auto Scaling takes care of it.
+
+### Dynamic Scaling Policies
+
+- Aggregate CPU response
+- Average request count per target
+- Average network bytes in/out
+- other options
+
+#### Simple Scaling Policies
+
+- ChangeInCapacity: increases by desired amount, for example increase count by 2 when load reaches x.
+- ExactCapacity: when the load reaches x, set the capacity to y [an exact number]
+- PercentCahngeInCapacity: if your capacity is 4 and the load increases, and you set to 50%, you will have 6
+- Cooldown period - this is the time Auto Scaling waits before executing its next action
+- Autoscaling **does not wait* when an instance is unhealthy, it replaces it
+
+#### Step Scaling Policies
+
+- example: when capacity is 50%, add 2 more instances; if capacity gets to 60% go up 4 more instances
+- can use a CloudWatch alarm to monitor average CPU utilization
+- when alarm is triggered, you need the following already set up:
+  - a lower bound
+  - an upper bound
+  - the adjustment type
+  - the amount to increase capacity
+- You can optionally set a *warm-up time*, the length of time Auto Scaling waits until looking at the metrics of the new instance
+- the default warm-up time is 300 seconds.
+
+> There are no cooldown periods in step scaling policies.
+
+## Target Tracking Policies
+
