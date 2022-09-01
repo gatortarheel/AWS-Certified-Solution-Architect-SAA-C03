@@ -268,7 +268,7 @@ An instance can be assigned a public IP address.  The default public IP address 
 - more versitile than launch configurations
 - can be copy/pasted to other instances
 
-## Auto Scaling Groups 
+## Auto Scaling Groups
 
 - number of running instances
 - minimum and maximum size of scaling group
@@ -322,7 +322,50 @@ An instance can be assigned a public IP address.  The default public IP address 
 
 - select a metric and target value, and Auto Scaling will create a Cloud Watch Alarm and a scaling policy to adjust the number of instances to keep the metric near that target.
 - you should use average CPU and request count per target
-- you should **not** use aggregate metrics like total request count 
+- you should **not** use aggregate metrics like total request count
 - you can specify a warm-up time
 
-## 
+## Scheduled Actions
+
+- if you have a predictable load pattern you can adjust your instance count proactively
+- declare a minimum, maximum, desired capacity value, and a start date and time
+
+## AWS Systems Manager
+
+- lets you automatically perform actions against your AWS resources and on-premise servers
+- upgrading installed packages
+- taking an inventory of installed software
+- installing a new application
+- creating an AMI golden image from an EBS snapshot
+- disabling public read access to S3 buckets
+
+### Actions
+
+- defined in documents
+  - automation - actions run on AWS resources
+  - command - actions run on Linux/Windows instances
+  - policy - processes for collecting inventory data from managed instances
+
+### Automation
+
+- perform actions in bulk
+- restart EC2 instances
+- update CloudFormation stacks
+- patch AMIs
+- you can target with very granular control
+
+### Run Command
+
+- execute tasks on managed instances that would otherwise require logging
+- Systems Manager uses an agent installed on the EC2 instance and on-premise managed instances
+- installed by default, but has no permissions by default
+- you first need to apply `AmazonEC2RoleforSSM` policy
+
+### Session Manager
+
+- Linux access through Bash
+- Windows access through PowerShell
+- Can keep a log of all events
+- secured using TLS 1.2
+
+
