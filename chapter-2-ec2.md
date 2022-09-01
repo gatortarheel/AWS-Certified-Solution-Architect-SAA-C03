@@ -320,3 +320,9 @@ An instance can be assigned a public IP address.  The default public IP address 
 
 ## Target Tracking Policies
 
+- select a metric and target value, and Auto Scaling will create a Cloud Watch Alarm and a scaling policy to adjust the number of instances to keep the metric near that target.
+- you should use average CPU and request count per target
+- you should **not** use aggregate metrics like total request count 
+- you can specify a warm-up time
+
+## 
