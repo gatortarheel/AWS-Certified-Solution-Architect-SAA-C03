@@ -368,4 +368,14 @@ An instance can be assigned a public IP address.  The default public IP address 
 - Can keep a log of all events
 - secured using TLS 1.2
 
+### Patch Manager
 
+- Installs patches
+- you can create patch groups with tags
+- tags are case sensitive
+- different baselines to determine if patches are installed automatically or require approval
+- some patches are auto-approved after 7 days *auto approval delay*
+- you can customize how patches are installed
+- approved patches are installed in maintenance windows specified by you
+- Patch Manager runs `AWS-RunPatchBaseline` document to perform patching
+                                              
